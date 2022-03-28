@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallingSand", "FallingSand\FallingSand.csproj", "{335801A9-A460-4F58-BFB0-0EB253A803F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallingSand.Domain", "FallingSand.Domain\FallingSand.Domain.csproj", "{88C35DE1-AC4A-4862-8BB0-BE62AF464411}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{335801A9-A460-4F58-BFB0-0EB253A803F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335801A9-A460-4F58-BFB0-0EB253A803F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335801A9-A460-4F58-BFB0-0EB253A803F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C35DE1-AC4A-4862-8BB0-BE62AF464411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C35DE1-AC4A-4862-8BB0-BE62AF464411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C35DE1-AC4A-4862-8BB0-BE62AF464411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C35DE1-AC4A-4862-8BB0-BE62AF464411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
