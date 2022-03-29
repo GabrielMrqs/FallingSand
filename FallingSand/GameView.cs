@@ -1,13 +1,12 @@
 using FallingSand.Domain;
-using System.Drawing;
-using System.Linq;
 
 namespace FallingSand
 {
     public partial class GameView : Form
     {
-        private Game Game;
-        private Render Render;
+        private Game Game { get; }
+        private Render Render { get; }
+        private int Counter { get; set; }
         public GameView()
         {
             InitializeComponent();
@@ -25,25 +24,42 @@ namespace FallingSand
         {
             if (e.Button == MouseButtons.Left)
             {
-                Particle particle = new(e.X, e.Y, 20, 20, Brushes.Black);
-                Game.AddParticle(particle);
+                Game.UseTool(e.X,e.Y);
             }
         }
+
         private void Resizing(object sender, EventArgs e)
         {
             LoadVariables();
         }
+
         private void Tick(object sender, EventArgs e)
         {
-            Text = Render.Height.ToString();
-
             Game.Tick();
 
             pictureBox.Image = Render.Draw();
+
+            Counter++;
+
+            Particles.Text = $"{Game.Particles.Count}";
         }
+
         private void OnRendering(object sender, PaintEventArgs e)
         {
             Timer.Start();
+            FPScounter.Start();
         }
+
+        private void FpsTick(object sender, EventArgs e)
+        {            
+            FPS.Text = Counter.ToString();
+            Counter = 0;
+        }
+
+        private void OnKeyPress(object sender, KeyPressEventArgs e)
+        {
+            Game.Tool = (Tool)e.KeyChar;
+        }
+
     }
 }

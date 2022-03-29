@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace FallingSand.Domain
 {
@@ -11,7 +6,7 @@ namespace FallingSand.Domain
     {
         public List<Particle> Particles { get; set; } = new();
         public int Width { get; set; }
-        public int Height { get; set; }
+        public static int Height { get; set; }
         public Bitmap? Bitmap { get; set; }
 
         public Bitmap Draw()

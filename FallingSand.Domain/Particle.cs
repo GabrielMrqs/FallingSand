@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace FallingSand.Domain
 {
@@ -16,6 +11,7 @@ namespace FallingSand.Domain
             Width = width;
             Height = height;
             Brush = brush;
+            Static = false;
         }
 
         public int Y { get; set; }
@@ -23,21 +19,42 @@ namespace FallingSand.Domain
         public int Width { get; set; }
         public int Height { get; set; }
         public Brush Brush { get; set; }
+        public bool Static { get; set; }
 
-        public void Move(Direction mov)
+        public void Move(Direction mov, int vel)
         {
             switch (mov)
             {
-                case Direction.Down: Y += 1; break;
+                case Direction.Down: Y += vel; break;
 
-                case Direction.Up: Y -= 1; break;
+                case Direction.Up: Y -= vel; break;
 
-                case Direction.Left: X -= 1; break;
+                case Direction.Left: X -= vel; break;
 
-                case Direction.Right: X += 1; break;
+                case Direction.Right: X += vel; break;
 
                 default: throw new ArgumentOutOfRangeException();
             }
+        }
+        public void UpdateStatus()
+        {
+            Static = true;
+        }
+        public Direction GetDirection(Particle particleAnom)
+        {
+            if (Y < particleAnom.Y)
+                return Direction.Down;
+
+            if (Y > particleAnom.Y)
+                return Direction.Up;
+
+            if (X < particleAnom.X)
+                return Direction.Right;
+
+            if (X > particleAnom.X)
+                return Direction.Left;
+
+            return Direction.None;
         }
         public bool OnGround(int height)
         {
@@ -50,7 +67,8 @@ namespace FallingSand.Domain
     }
     public enum Direction
     {
-        Down, Up, Left, Right,None
+        Down, Up, Left, Right, None
     }
+
 
 }

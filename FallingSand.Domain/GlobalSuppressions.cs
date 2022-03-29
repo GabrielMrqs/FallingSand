@@ -7,3 +7,5 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:FallingSand.Domain.Render.Draw~System.Drawing.Bitmap")]
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:FallingSand.Domain.Render.UpdateScreenSize(System.Int32,System.Int32)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:FallingSand.Domain.Game.UseTool(System.Int32,System.Int32)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:FallingSand.Domain.Game.BrushTool(System.Int32,System.Int32)")]
